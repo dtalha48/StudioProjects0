@@ -142,7 +142,7 @@ class _MyAppState extends State<MyApp> {
                         selectStooge2 = curlyphoto;
                       } else if (value == 2) {
                         selectStooge2 = moephoto;
-                      } else if (value == 1) {
+                      } else if (value == 3) {
                         selectStooge2 = shempphoto;
                       }
 
@@ -159,10 +159,40 @@ class _MyAppState extends State<MyApp> {
 
     Row myRow = Row(children: [
       myColumn,
-      Image.asset(selectStooge, width: 150, fit: BoxFit.cover)
+      Image.asset(selectStooge2, width: 150, fit: BoxFit.cover)
     ]);
 
     return myRow;
+  }
+
+  // --------------------Radio Button Tiles------------------
+
+  Widget makeRadioTiles() {
+    List aNames = ["Bob", "Betty", "Beau", "Brian"];
+    List jTitles = ["Doctor", "Enigneer", "Barber", "Developer"];
+
+    List<Widget> list = <Widget>[];
+
+    for (int i = 0; i < aNames.length; i++) {
+      list.add(RadioListTile(
+          value: i,
+          groupValue: _groupValue3,
+          activeColor: Colors.green,
+          title: Text('Name: ' + aNames[i]),
+          subtitle: Text('Job: ' + jTitles[i]),
+          controlAffinity: ListTileControlAffinity.trailing,
+          onChanged: (value) {
+            setState(() {
+              _groupValue3 = i;
+              text1Controller.text =
+                  aNames[i].toString() + " - " + jTitles[i].toString();
+            });
+          }));
+    }
+
+    Column mycolumn = Column(children: list);
+
+    return mycolumn;
   }
 
   // -------------------------------------------------
@@ -178,6 +208,7 @@ class _MyAppState extends State<MyApp> {
             const Divider(height: 20, thickness: 5, color: Colors.indigo),
             makeRadioButtons2(),
             const Divider(height: 20, thickness: 5, color: Colors.indigo),
+            makeRadioTiles()
           ],
         ));
   }
