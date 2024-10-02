@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 String larryphoto = "images/larry.jpg";
 String curlyphoto = "images/curly.jpg";
 String moephoto = "images/moe.jpg";
-String shempphoto = "images/shempphoto.jpg";
+String shempphoto = "images/shemp.jpg";
 
 void main() {
   runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
