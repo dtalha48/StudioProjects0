@@ -172,7 +172,7 @@ class _ThirdPageState extends State<ThirdPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("About Me and Text Box Example"),
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.limeAccent,
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
