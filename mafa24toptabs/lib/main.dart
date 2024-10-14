@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   
   String quote2 = "the ebb and flow of the atlantic tides, the drift of the continents, the very position of the sun along its ecliptic. These are just a few of the things that I control in my world.";
 
-  String quote3 = "its a hundred and six miles to chicago, we have a full tank of gas, half a pack of cigarettes, its dark and we are wearing sunglasses.";
+  String quote3 = "it is a hundred and six miles to chicago, we have a full tank of gas, half a pack of cigarettes, its dark and we are wearing sunglasses.";
 
   @override
   Widget build(BuildContext context) {
