@@ -6,7 +6,7 @@ void main() {
 
 class MyStateLessWidget extends StatelessWidget {
   //constructor
-  const MyStateLessWidget({Key? key}) : super(key: key);
+  const MyStateLessWidget({super.key});
 
   static const String myName = "Dedective Catlover";
 
@@ -28,36 +28,36 @@ class MyStateLessWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Happy Day"),
-              Text(
+              const Text("Happy Day"),
+              const Text(
                 "The Beatles",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold),
               ),
-              Divider(
+              const Divider(
                 color: Colors.green,
                 thickness: 15,
                 indent: 0,
                 endIndent: 0,
               ),
-              Text(myName),
-              Row(
+              const Text(myName),
+              const Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     MyCard(
-                      title: const Text("Guru"),
+                      title: Text("Guru"),
                       icon: Icon(Icons.airplane_ticket,
                           size: 40.0, color: Colors.blue),
                     ),
                     MyCard(
-                      title: const Text("Boss"),
+                      title: Text("Boss"),
                       icon: Icon(Icons.cabin, size: 40.0, color: Colors.blue),
                     ),
                     MyCard(
-                      title: const Text("Chif"),
+                      title: Text("Chif"),
                       icon: Icon(Icons.apple, size: 40.0, color: Colors.blue),
                     ),
                   ]),
@@ -87,10 +87,9 @@ class MyCard extends StatelessWidget {
 
   // constructor
   const MyCard(
-      {Key? key,
+      {super.key,
         this.title = const Text(""),
-        this.icon = const Icon(Icons.camera)})
-      : super(key: key);
+        this.icon = const Icon(Icons.camera)});
 
   @override
   Widget build(BuildContext context) {
@@ -108,14 +107,14 @@ class MyCard extends StatelessWidget {
 }
 
 class MyRichText extends StatelessWidget {
-  String _ownerFN = "";
-  String _ownerLN = "";
-  String _dogBreed = "";
-  String _dogName = "Barky";
+  final String _ownerFN = "";
+  final String _ownerLN = "";
+  final String _dogBreed = "";
+  final String _dogName = "Barky";
 
   // Constructor
   MyRichText.allInfo(
-      this._ownerFN, this._ownerLN, this._dogBreed, this._dogName);
+      this._ownerFN, this._ownerLN, this._dogBreed, this._dogName, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +135,7 @@ class MyRichText extends StatelessWidget {
                       text: 'Owner: ',
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.black)),
-                  TextSpan(text: _ownerFN + " " + _ownerLN)
+                  TextSpan(text: "$_ownerFN $_ownerLN")
                 ])),
             RichText(
                 text: TextSpan(children: <TextSpan>[

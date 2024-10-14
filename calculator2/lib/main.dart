@@ -7,7 +7,7 @@ void main() {
 }
 
 class CalculatorApp extends StatefulWidget {
-  const CalculatorApp({Key? key}) : super(key: key);
+  const CalculatorApp({super.key});
 
   @override
   _CalculatorAppState createState() => _CalculatorAppState();

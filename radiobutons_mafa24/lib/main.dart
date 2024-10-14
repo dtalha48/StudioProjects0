@@ -128,7 +128,7 @@ class _MyAppState extends State<MyApp> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(StoogeList[i].toString(),
-                    style: TextStyle(fontSize: 18.0)),
+                    style: const TextStyle(fontSize: 18.0)),
                 Radio(
                   value: i,
                   groupValue: _groupValue2,
@@ -185,7 +185,7 @@ class _MyAppState extends State<MyApp> {
             setState(() {
               _groupValue3 = i;
               text1Controller.text =
-                  aNames[i].toString() + " - " + jTitles[i].toString();
+                  "${aNames[i]} - ${jTitles[i]}";
             });
           }));
     }

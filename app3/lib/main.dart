@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-      home: HomePage(),
+      home: const HomePage(),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
-        "/HomePage": (BuildContext context) => HomePage(),
-        "/SecondPage": (BuildContext context) => SecondPage(),
-        "/ThirdPage": (BuildContext context) => ThirdPage(),
-        "/FourthPage": (BuildContext context) => FourthPage(),
+        "/HomePage": (BuildContext context) => const HomePage(),
+        "/SecondPage": (BuildContext context) => const SecondPage(),
+        "/ThirdPage": (BuildContext context) => const ThirdPage(),
+        "/FourthPage": (BuildContext context) => const FourthPage(),
       }));
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ class HomePage extends StatelessWidget {
 }
 
 class SecondPage extends StatelessWidget {
-  const SecondPage({Key? key}) : super(key: key);
+  const SecondPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +104,7 @@ class SecondPage extends StatelessWidget {
 }
 
 class ThirdPage extends StatelessWidget {
-  const ThirdPage({Key? key}) : super(key: key);
+  const ThirdPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +141,7 @@ class ThirdPage extends StatelessWidget {
 }
 
 class FourthPage extends StatelessWidget {
-  const FourthPage({Key? key}) : super(key: key);
+  const FourthPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ void main() {
 
 class MyStatelessWidget extends StatelessWidget {
   // constructor
-  const MyStatelessWidget({Key? key}) : super(key: key);
+  const MyStatelessWidget({super.key});
 
   Widget gameTitles() {
     List<String> games = [
@@ -18,23 +18,23 @@ class MyStatelessWidget extends StatelessWidget {
 
 
     return Column(children: [
-      Text("Games",
+      const Text("Games",
           style: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold)),
       Text(games.elementAt(0),
-          style: TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic)),
+          style: const TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic)),
       Text(games.elementAt(1),
-          style: TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic)),
+          style: const TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic)),
       Text(games.elementAt(2),
-          style: TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic)),
+          style: const TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic)),
       Text(games.elementAt(3),
-          style: TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic)),
-      Divider(color: Colors.red, thickness: 5, height: 50.0),
-      MyCard(title: Text("Ghost of Tushima"), genre: Text("action"))
+          style: const TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic)),
+      const Divider(color: Colors.red, thickness: 5, height: 50.0),
+      const MyCard(title: Text("Ghost of Tushima"), genre: Text("action"))
     ]);
   }
 
   Widget myWidget() {
-    return Column(
+    return const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -49,7 +49,7 @@ class MyStatelessWidget extends StatelessWidget {
   }
 
   Widget rowExample() {
-    return Row(
+    return const Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -79,7 +79,7 @@ class MyStatelessWidget extends StatelessWidget {
 
               RichTextCard(), // RichTextCard added here
 
-              Divider(color: Colors.deepOrange), // Another divider added here
+              const Divider(color: Colors.deepOrange), // Another divider added here
               myWidget(),
               gameTitles(),
               const Text("The End")
@@ -97,8 +97,7 @@ class MyCard extends StatelessWidget {
 
   // constructor
   const MyCard(
-      {Key? key, this.title = const Text(""), this.genre = const Text("")})
-      : super(key: key);
+      {super.key, this.title = const Text(""), this.genre = const Text("")});
 
   @override
   Widget build(BuildContext context) {
@@ -111,6 +110,8 @@ class MyCard extends StatelessWidget {
 
 // New RichTextCard widget added
 class RichTextCard extends StatelessWidget {
+  const RichTextCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -121,7 +122,7 @@ class RichTextCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
       ),
       child: RichText(
-        text: TextSpan(
+        text: const TextSpan(
           text: 'Welcome ',
           style: TextStyle(fontSize: 20.0, color: Colors.black),
           children: <TextSpan>[

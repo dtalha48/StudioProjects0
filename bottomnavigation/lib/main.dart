@@ -5,7 +5,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -18,9 +18,9 @@ class _MyAppState extends State<MyApp> {
   TextStyle(fontSize: 36, fontWeight: FontWeight.bold);
 
   final  List<Widget> _WidgetOptions = [
-  Text('Index 0: People', style: myStyle),
-  Text('Index 1: Weekend', style: myStyle),
-  Text('Index 2: Message', style: myStyle),
+  const Text('Index 0: People', style: myStyle),
+  const Text('Index 1: Weekend', style: myStyle),
+  const Text('Index 2: Message', style: myStyle),
   myWidget
   ];
 
@@ -84,7 +84,7 @@ class _MyAppState extends State<MyApp> {
   // thumbvisilibilty set to true
   // it will always show the scrollbar
   thumbVisibility: true,
-  radius: Radius.circular(10),
+  radius: const Radius.circular(10),
   child: ListView.builder(
   primary: true,
   itemCount: 51,
