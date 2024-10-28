@@ -10,7 +10,7 @@ void main() {
 }
 
 class MyTabApp extends StatefulWidget {
-  const MyTabApp({Key? key}) : super(key: key);
+  const MyTabApp({super.key});
 
   @override
   _MyTabAppState createState() => _MyTabAppState();
@@ -52,7 +52,7 @@ class _MyTabAppState extends State<MyTabApp>
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         const SizedBox(height: 10),
-        ...facts.map((fact) => Text("• $fact")).toList(),
+        ...facts.map((fact) => Text("• $fact")),
         const SizedBox(height: 20),
         const Text("Description:",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),

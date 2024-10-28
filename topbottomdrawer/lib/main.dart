@@ -17,7 +17,7 @@ void main() {
 
 class MyApp extends StatefulWidget {
   // constructor
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   MyAppState createState() => MyAppState();
@@ -32,30 +32,30 @@ class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         child: ListView(
             padding: const EdgeInsets.fromLTRB(5, 45, 5, 5),
             children: [
-              SizedBox(
-                height: 100,
-                child: DrawerHeader(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40),
-                        color: Colors.blue),
-                    child: const Text("States")),
-              ),
-              ListTile(
-                  title: const Text("Montana"),
-                  onTap: () {
-                    _onBottomTap(0);
-                  }),
-              ListTile(
-                  title: const Text("Colorado"),
-                  onTap: () {
-                    _onBottomTap(1);
-                  }),
-              ListTile(
-                  title: const Text("Wyoming"),
-                  onTap: () {
-                    _onBottomTap(2);
-                  }),
-            ]));
+          SizedBox(
+            height: 100,
+            child: DrawerHeader(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color: Colors.blue),
+                child: const Text("States")),
+          ),
+          ListTile(
+              title: const Text("Montana"),
+              onTap: () {
+                _onBottomTap(0);
+              }),
+          ListTile(
+              title: const Text("Colorado"),
+              onTap: () {
+                _onBottomTap(1);
+              }),
+          ListTile(
+              title: const Text("Wyoming"),
+              onTap: () {
+                _onBottomTap(2);
+              }),
+        ]));
   }
 
 // tab contents

@@ -88,8 +88,8 @@ class MyCard extends StatelessWidget {
   // constructor
   const MyCard(
       {super.key,
-        this.title = const Text(""),
-        this.icon = const Icon(Icons.camera)});
+      this.title = const Text(""),
+      this.icon = const Icon(Icons.camera)});
 
   @override
   Widget build(BuildContext context) {
@@ -113,8 +113,9 @@ class MyRichText extends StatelessWidget {
   final String _dogName = "Barky";
 
   // Constructor
-  MyRichText.allInfo(
-      this._ownerFN, this._ownerLN, this._dogBreed, this._dogName, {super.key});
+  const MyRichText.allInfo(
+      this._ownerFN, this._ownerLN, this._dogBreed, this._dogName,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -131,28 +132,28 @@ class MyRichText extends StatelessWidget {
           children: <Widget>[
             RichText(
                 text: TextSpan(children: <TextSpan>[
-                  const TextSpan(
-                      text: 'Owner: ',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black)),
-                  TextSpan(text: "$_ownerFN $_ownerLN")
-                ])),
+              const TextSpan(
+                  text: 'Owner: ',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.black)),
+              TextSpan(text: "$_ownerFN $_ownerLN")
+            ])),
             RichText(
                 text: TextSpan(children: <TextSpan>[
-                  const TextSpan(
-                      text: 'Dog Name:',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black)),
-                  TextSpan(text: _dogName)
-                ])),
+              const TextSpan(
+                  text: 'Dog Name:',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.black)),
+              TextSpan(text: _dogName)
+            ])),
             RichText(
                 text: TextSpan(children: <TextSpan>[
-                  const TextSpan(
-                      text: 'Dog Breed: ',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black)),
-                  TextSpan(text: _dogBreed)
-                ])),
+              const TextSpan(
+                  text: 'Dog Breed: ',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.black)),
+              TextSpan(text: _dogBreed)
+            ])),
           ]),
     ); // container
   }

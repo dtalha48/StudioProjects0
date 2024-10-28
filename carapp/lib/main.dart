@@ -5,7 +5,7 @@ import 'dart:convert';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   MyHomePageState createState() => MyHomePageState();
@@ -52,12 +52,12 @@ class MyHomePageState extends State<MyHomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          ListTile(
-                              title: Text(
-                                  "${data[index]['year']} ${data[index]['make']}"),
-                              subtitle: Text(
-                                  "${data[index]['model']} ${data[index]['body_styles']}"))
-                        ]));
+                      ListTile(
+                          title: Text(
+                              "${data[index]['year']} ${data[index]['make']}"),
+                          subtitle: Text(
+                              "${data[index]['model']} ${data[index]['body_styles']}"))
+                    ]));
               });
         } // end of if
 

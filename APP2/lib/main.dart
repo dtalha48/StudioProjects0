@@ -16,7 +16,6 @@ class MyStatelessWidget extends StatelessWidget {
       "The Finals"
     ];
 
-
     return Column(children: [
       const Text("Games",
           style: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold)),
@@ -44,7 +43,6 @@ class MyStatelessWidget extends StatelessWidget {
           MyCard(title: Text("Forza IV"), genre: Text("action")),
           MyCard(title: Text("Forza Horizon V"), genre: Text("Racing")),
           MyCard(title: Text("No Way Out"), genre: Text("action")),
-
         ]);
   }
 
@@ -75,11 +73,10 @@ class MyStatelessWidget extends StatelessWidget {
             children: [
               rowExample(),
 
+              const RichTextCard(), // RichTextCard added here
 
-
-              RichTextCard(), // RichTextCard added here
-
-              const Divider(color: Colors.deepOrange), // Another divider added here
+              const Divider(
+                  color: Colors.deepOrange), // Another divider added here
               myWidget(),
               gameTitles(),
               const Text("The End")
@@ -128,8 +125,8 @@ class RichTextCard extends StatelessWidget {
           children: <TextSpan>[
             TextSpan(
                 text: 'Bubba',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.pink)),
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.pink)),
             TextSpan(text: ', Thanks for Using'),
           ],
         ),

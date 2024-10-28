@@ -37,7 +37,7 @@ Drawer myDrawer(BuildContext context) {
 
 void main() {
   runApp(MaterialApp(
-      home: MyApp(),
+      home: const MyApp(),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
         "/HomePage": (BuildContext context) => const MyApp(),
@@ -48,7 +48,7 @@ void main() {
 
 class MyApp extends StatefulWidget {
   // constructor
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   MyAppState createState() => MyAppState();
@@ -69,7 +69,7 @@ class MyAppState extends State<MyApp> {
 
 class Page1 extends StatefulWidget {
   // constructor
-  const Page1({Key? key}) : super(key: key);
+  const Page1({super.key});
 
   @override
   Page1State createState() => Page1State();
@@ -96,7 +96,7 @@ class Page1State extends State<Page1> {
 
 class Page2 extends StatefulWidget {
   // constructor
-  const Page2({Key? key}) : super(key: key);
+  const Page2({super.key});
 
   @override
   Page2State createState() => Page2State();
