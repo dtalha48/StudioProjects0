@@ -29,7 +29,6 @@ class _GameScreenState extends State<GameScreen> {
   static const int _rowSize = 40;
   static const int _totalGridSize = _rowSize * _rowSize;
 
-  // Centered snake position
   final List<int> _snakePosition = [
     (_rowSize * (_rowSize ~/ 2)) - (_rowSize ~/ 2) - 1,
     (_rowSize * (_rowSize ~/ 2)) - (_rowSize ~/ 2),
@@ -40,7 +39,6 @@ class _GameScreenState extends State<GameScreen> {
   String _direction = 'down';
   Timer? _timer;
 
-  // Define walls: borders and some internal cells
   final Set<int> _wallPositions = Set<int>();
 
   @override
@@ -51,23 +49,21 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   void _createWalls() {
-    // Border walls
     for (int i = 0; i < _rowSize; i++) {
-      _wallPositions.add(i); // Top border
-      _wallPositions.add(_totalGridSize - i - 1); // Bottom border
-      _wallPositions.add(i * _rowSize); // Left border
-      _wallPositions.add((i * _rowSize) + _rowSize - 1); // Right border
+      _wallPositions.add(i);
+      _wallPositions.add(_totalGridSize - i - 1);
+      _wallPositions.add(i * _rowSize);
+      _wallPositions.add((i * _rowSize) + _rowSize - 1);
     }
 
-    // Internal walls for extra challenge
     for (int i = 10; i < 15; i++) {
-      _wallPositions.add(i + _rowSize * 10); // Horizontal line in upper-middle
-      _wallPositions.add(i + _rowSize * 30); // Horizontal line in lower-middle
+      _wallPositions.add(i + _rowSize * 10);
+      _wallPositions.add(i + _rowSize * 30);
     }
   }
 
   void _startGame() {
-    _timer = Timer.periodic(Duration(milliseconds: 100), (timer) {
+    _timer = Timer.periodic(Duration(milliseconds: 70), (timer) {
       _updateSnake();
     });
   }
@@ -217,9 +213,21 @@ class _GameScreenState extends State<GameScreen> {
                     crossAxisCount: _rowSize,
                   ),
                   itemBuilder: (BuildContext context, int index) {
-                    if (_snakePosition.contains(index)) {
+                    if (_snakePosition.first == index) {
+                      return Transform.scale(
+                        scale: 2.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            shape: BoxShape.circle,
+                          ),
+                          margin: EdgeInsets.all(0.0000004),
+                        ),
+                      );
+                    } else if (_snakePosition.contains(index)) {
                       return Container(
-                        color: Colors.green,
+                        color: Colors.white,
+                        margin: EdgeInsets.all(1),
                       );
                     } else if (_wallPositions.contains(index)) {
                       return Container(
@@ -227,11 +235,11 @@ class _GameScreenState extends State<GameScreen> {
                       );
                     } else if (index == _foodPosition) {
                       return Container(
-                        color: Colors.red,
+                        color: Colors.green,
                       );
                     } else {
                       return Container(
-                        color: Colors.grey[200],
+                        color: Colors.white,
                       );
                     }
                   },
